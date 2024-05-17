@@ -1,0 +1,76 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0%;
+    background-color: #f4f4f4;
+    gap: 25px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator .display {
+    grid-column: span 4;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    font-size: 2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.calculator button {
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.calculator button:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.calculator button:active {
+    transform: scale(0.98);
+}
+
+.calculator button:focus {
+    outline: none;
+}
+
+/* Special styles for the equals button */
+.calculator button[onclick="calculate()"] {
+    background-color: #04c;
+    color: white;
+}
+
+/* Special styles for the zero button */
+.calculator button[onclick="inputValue('0')"] {
+    grid-column: span 2;
+}
+
+/* Clear and delete buttons styling */
+.calculator button[onclick="clearDisplay()"],
+.calculator button[onclick="deleteLast()"] {
+    background-color: #f44336;
+    color: white;
+}
+
